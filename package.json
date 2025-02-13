@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@sap/cds": "^8.7.1",
+    "@types/express": "^5.0.0",
+    "@types/soap": "^0.18.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "soap": "^1.1.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^22.13.1",
+    "@types/sax": "^1.2.7",
+    "copyfiles": "^2.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "build": "tsc && copyfiles -u 2 src/**/*.{wsdl,xml,json} dist/soap",
+    "start": "node dist/server.js"
+  }
+}
