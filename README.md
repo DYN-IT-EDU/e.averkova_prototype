@@ -1,5 +1,18 @@
 # SOAP Service with CAP, Express, and TypeScript
 
+## wsdl-tsclient -> src/generated/helloservice
+
+```json
+"scripts": {
+    "generate wsdl-tsclient": "npx wsdl-tsclient src/soap/HelloService.wsdl -o=src/generated" 
+```
+## wsdl-to-ts -> src/generated/HelloService
+
+```json
+"scripts": {
+    "generate wsdl-to-ts": "npx wsdl-to-ts --outdir=src/generated src/soap/HelloService.wsdl" 
+```
+
 ## Type Declarations
 
 This code extends the `@sap/cds` module. The `src/types/sap__cds.d.ts` file declares that the `cds` object has a method `serve` that takes a service name as a string and returns an object with the `in` method. The `in` method is used to integrate the service into the Express app.
