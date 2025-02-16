@@ -6,17 +6,23 @@
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "soap": "^1.1.7"
+    "soap": "^1.1.7",
+    "wsdl2.js": "^0.4.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/node": "^22.13.1",
     "@types/sax": "^1.2.7",
     "copyfiles": "^2.4.1",
+    "soap-ts": "^0.0.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "wsdl-tsclient": "^1.7.1"
   },
   "scripts": {
+    "generate wsdl-tsclient": "npx wsdl-tsclient src/soap/HelloService.wsdl -o=src/generated",
+    "generate wsdl-to-ts": "npx wsdl-to-ts --outdir=src/generated src/soap/HelloService.wsdl",
     "build": "tsc && copyfiles -u 2 src/**/*.{wsdl,xml,json} dist/soap",
     "start": "node dist/server.js"
   }
